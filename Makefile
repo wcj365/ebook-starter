@@ -14,6 +14,6 @@ epub:
 
 # Generate PDF file
 pdf:
-	pandoc  --pdf-engine=xelatex -V CJKmainfont="AR PL UKai TW" config.yml \
+	pandoc --toc --pdf-engine=xelatex -V CJKmainfont="AR PL UKai TW" config.yml \
 	`find $(SOURCEDIR) -name '*.md' | sort` \
 	-o $(OUTDIR)/$(PROJECT).pdf
