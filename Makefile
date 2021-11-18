@@ -7,13 +7,13 @@ PROJECT ?= $(shell basename `pwd`)
 
 # Generate EPUB file
 epub:
-	pandoc -d config.yml \
+	pandoc --pdf-engine=xelatex -V CJKmainfont="AR PL UKai TW" config.yml \
 	`find $(SOURCEDIR) -name '*.md' | sort` \
 	-o $(OUTDIR)/$(PROJECT).epub
 
 
 # Generate PDF file
 pdf:
-	pandoc -d config.yml \
+	pandoc  --pdf-engine=xelatex -V CJKmainfont="AR PL UKai TW" config.yml \
 	`find $(SOURCEDIR) -name '*.md' | sort` \
 	-o $(OUTDIR)/$(PROJECT).pdf
